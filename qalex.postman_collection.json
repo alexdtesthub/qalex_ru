@@ -72,7 +72,7 @@
 					]
 				},
 				"url": {
-					"raw": "https://qalex.ru/index.php",
+					"raw": "https://qalex.ru/.", #Укажите файл обработки запроса
 					"protocol": "https",
 					"host": [
 						"qalex",
@@ -121,7 +121,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://qalex.ru/delete.php?id={{userId}}",
+					"raw": "https://qalex.ru/.?id={{userId}}", #Укажите файл обработки запроса
 					"protocol": "https",
 					"host": [
 						"qalex",
