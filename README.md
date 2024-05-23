@@ -2,4 +2,4 @@
 
 
 # qalex
-QAlexd.ru // autotests
+QAlex.ru // autotests
