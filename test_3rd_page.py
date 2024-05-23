@@ -10,10 +10,10 @@ link = Links.OFFER_PAGE_LINK
 @pytest.fixture(scope="session")
 def db_config():
     return {
-        'host': 'localhost',
-        'user': 'root',
+        'host': '', # Укажите свой IP или DNS
+        'user': '', # Укажите имя пользователя
         'password': '',  # Укажите свой пароль
-        'database': 'my_database'
+        'database': '' # Укажите имя БД
     }
 
 # Фикстура для случайного email (сессионная)
