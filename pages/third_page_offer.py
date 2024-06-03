@@ -4,6 +4,12 @@ from .base_page import BasePage
 from .locators import MainPageLocators, AboutMePageLocators, OfferPageLocators, Links
 
 
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+import time
+
+
 class OfferPage(BasePage):
     def should_be_all_links(self):
         self.should_be_main_link()
@@ -68,7 +74,7 @@ class OfferPage(BasePage):
         except NoSuchElementException:
             assert False, "No SEND_BUTTON in form"
 
-    def check_mail_and_offer_forms_and_send(self, email, offer):
+    def check_mail_and_offer_forms_and_send(self, email, offer, timeout=1):
         email_field = self.browser.find_element(*OfferPageLocators.EMAIL_FIELD)
         email_field.click()
         email_field.send_keys(email)
@@ -78,7 +84,11 @@ class OfferPage(BasePage):
         send_button = self.browser.find_element(*OfferPageLocators.SEND_BUTTON)
         send_button.click()
         try:
+            WebDriverWait(self.browser, timeout).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, '.noty_body'))
+            )
             alert_text = self.browser.find_element(*OfferPageLocators.ALERT_TEXT).text
+            print(f"Полученный текст алерта: '{alert_text}'")  # Добавьте эту строку
         except NoSuchElementException:
             assert False, "Alert text element not found"
 
