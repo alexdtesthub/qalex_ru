@@ -29,5 +29,5 @@ class OfferPageLocators:
     YOUR_OFFER_TEXT = (By.CSS_SELECTOR, '.your-offer')
     OFFER_FIELD = (By.XPATH, '//*[@id="your-offer"]')
     SEND_BUTTON = (By.CSS_SELECTOR, '.send')
-    ALERT_TEXT = (By.XPATH, '//*[@id="swal2-html-container"]')
-    OK_BUTTON = (By.CSS_SELECTOR, '.swal2-actions .swal2-confirm')
+    ALERT_TEXT = (By.CSS_SELECTOR, '.noty_body')
+    OK_BUTTON = (By.CSS_SELECTOR, '.noty_body')
